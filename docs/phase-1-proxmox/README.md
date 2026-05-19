@@ -106,22 +106,22 @@ Logged into the Proxmox web UI at `https://10.0.0.2:8006` and navigated to:
 
 Created the following bridges:
 
-**vmbr1** — OPNsense WAN uplink
+**vmbr1** - OPNsense WAN uplink
 - Bridge ports: `nic1`
 - No IP address
 - Comment: `OPNsense WAN uplink - home LAN`
 
-**vmbr2** — Spare
+**vmbr2** - Spare
 - Bridge ports: `nic2`
 - No IP address
 - Comment: `Spare - reserved`
 
-**vmbr10** — Internal Server VLAN
+**vmbr10** - Internal Server VLAN
 - Bridge ports: none
 - No IP address
 - Comment: `Internal - Server VLAN 10 - 172.16.10.0/24`
 
-**vmbr20** — Internal Workstation VLAN
+**vmbr20** - Internal Workstation VLAN
 - Bridge ports: none
 - No IP address
 - Comment: `Internal - Workstation VLAN 20 - 172.16.20.0/24`
@@ -161,7 +161,7 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 - [ ] vmbr0 shows 10.0.0.2/24 with gateway 10.0.0.1 ✅
 - [ ] vmbr1 and vmbr2 have no IP address ✅
 - [ ] vmbr10 and vmbr20 are internal with no physical NIC ✅
-- [ ] Proxmox internet connectivity confirmed — 0% packet loss ✅
+- [ ] Proxmox internet connectivity confirmed - 0% packet loss ✅
 
 ---
 
@@ -181,7 +181,7 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 
 ## What I Learned
 
-- Proxmox VE uses Linux bridges to connect VMs to physical and virtual networks — similar in concept to virtual switches in VMware vSphere
+- Proxmox VE uses Linux bridges to connect VMs to physical and virtual networks similar in concept to virtual switches in VMware vSphere
 - Physical NICs should be identified by name before configuring bridges to avoid incorrect assignments
 - Internal bridges with no physical NIC attached are a clean way to create isolated lab segments that never touch the home LAN
 - The `lspci` command is useful for identifying hardware that may not be labeled or documented
@@ -193,7 +193,7 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 
 In enterprise environments, hypervisor network configuration is a foundational skill for systems administrators and virtualization engineers. Mapping physical NICs to virtual switches, isolating management traffic, and designing internal-only networks are standard practices in VMware vSphere, Microsoft Hyper-V, and Proxmox VE deployments.
 
-This phase mirrors the kind of work a junior systems administrator would perform when provisioning a new virtualization host — documenting the hardware, planning the network before touching anything, and validating the configuration before moving on.
+This phase mirrors the kind of work a junior systems administrator would perform when provisioning a new virtualization host documenting the hardware, planning the network before touching anything, and validating the configuration before moving on.
 
 ---
 

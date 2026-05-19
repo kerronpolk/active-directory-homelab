@@ -168,13 +168,13 @@ PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
 ## Troubleshooting Notes
 
 **Problem:** Unexpected fourth NIC (nic3) appearing in the web UI
-**Cause:** A WiFi USB adapter was plugged into the host during installation,
-creating an unneeded network interface
-**Resolution:** Removed the WiFi USB adapter from the host, then removed
-the ghost nic3 entry from the Proxmox web UI. The interface list correctly
-showed only nic0, nic1, and nic2 after removal.
+
+**Cause:** A WiFi USB adapter was plugged into the host during installation, creating an unneeded network interface
+
+**Resolution:** Removed the WiFi USB adapter from the host, then removed the ghost nic3 entry from the Proxmox web UI using the Network tab Remove button. The interface list correctly showed only nic0, nic1, and nic2 after removal.
 
 **Problem:** Realtek RTL8111 onboard NIC not previously documented in hardware inventory
+
 **Resolution:** Identified via `lspci` output. Hardware inventory updated to reflect both the onboard Realtek NIC and the Intel 82576 PCIe add-in card
 
 ---

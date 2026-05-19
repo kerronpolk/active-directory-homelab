@@ -139,6 +139,8 @@ Verified the bridge configuration by running the following in the Proxmox shell:
 ```bash
 cat /etc/network/interfaces
 ```
+![/etc/network/interfaces output](../../screenshots/phase-1-proxmox/network_interfaces_output.png)
+*Output of `cat /etc/network/interfaces` confirming all five bridges are correctly configured*
 
 Confirmed all five bridges were correctly configured. Then verified internet connectivity from the Proxmox host:
 

@@ -35,7 +35,7 @@ The goal is to replicate the kind of environment a junior IT support technician,
 |---|---|
 | Proxmox VE 9.1 | Hypervisor |
 | OPNsense | Virtual firewall and router |
-| Windows Server 2022 | Domain controller, DNS, DHCP |
+| Windows Server 2025 | Domain controller, DNS, DHCP |
 | Windows 11 Pro | Domain-joined workstation |
 | Dell OptiPlex 3080 | Physical host hardware |
 | Intel 82576 dual-port NIC | Network segmentation |
@@ -62,8 +62,8 @@ The lab uses OPNsense as a virtual firewall to separate the home network from th
 |---|---|---|
 | [Phase 0 — Hardware Acquisition and Pre-Build Setup](labs/phase-0-pre-build/) | Hardware sourcing, refurbishment, and pre-build verification | ✅ Complete |
 | [Phase 1 — Proxmox VE Installation and Network Configuration](labs/phase-1-proxmox/) | Proxmox installation, bridge configuration, and validation | ✅ Complete |
-| Phase 2 — OPNsense VM Installation and Configuration | Virtual firewall setup, VLAN configuration, and routing | 🔄 In Progress |
-| Phase 3 — Windows Server and Active Directory | Domain controller promotion, DNS, DHCP, and AD DS | ⏳ Planned |
+| [Phase 2 — OPNsense VM Installation and Configuration](labs/phase-2-opnsense/) | Virtual firewall setup, VLAN configuration, and routing | ✅ Complete |
+| [Phase 3 — Windows Server and Active Directory](labs/phase-3-windows-server/) | Domain controller promotion, DNS, DHCP, and AD DS | ✅ Complete |
 | Phase 4 — Windows 11 Client and Domain Join | Workstation configuration and domain join | ⏳ Planned |
 | Phase 5 — Group Policy and Validation | GPO creation, DHCP relay, and full lab validation | ⏳ Planned |
 

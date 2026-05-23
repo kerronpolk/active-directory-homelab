@@ -26,7 +26,7 @@ Create and configure the OPNsense virtual firewall and router on the Proxmox hyp
 
 ## Tools and Technologies
 
-- OPNsense 26.1.6 (26.1.6_2 patch level shown in the Environment table)
+- OPNsense 26.1.6_2
 - Proxmox VE VM creation wizard
 - VirtIO network drivers (vtnet0, vtnet1, vtnet2)
 - Dnsmasq DNS and DHCP service (temporary; migrates to Windows Server in Phase 3)
@@ -140,7 +140,7 @@ Started VM 100 and opened the console in Proxmox. Booted from the OPNsense ISO a
 > ZFS was not used because 2GB RAM is insufficient for ZFS ARC overhead.
 
 - Selected the 16GB virtual disk as the install target
-- Set a strong root password (kept out of the repo and not committed)
+- Set a strong root credential and kept it out of the repository
 - Allowed the installer to reboot after completion
 
 The installer confirmed successful completion before rebooting.
@@ -176,8 +176,6 @@ The console confirmed all three interfaces with correct IPs after configuration.
 
 ![OPNsense console showing all three interfaces with correct IPs](../../screenshots/phase-2-opnsense/console_interfaces_final.png)
 *OPNsense console: LAN 172.16.10.1/24, OPT1 172.16.20.1/24, and WAN 10.0.0.8/24 confirmed*
-
-> Security note before publishing: redact or crop any public IPv6 prefix shown in this screenshot.
 
 ### Step 6 - Verify internet connectivity from OPNsense
 
@@ -231,7 +229,7 @@ On first login, OPNsense launched the setup wizard automatically. Stepped throug
 | Network [WAN] | Left as DHCP (default) |
 | Network [LAN] | Confirmed 172.16.10.1 / 24 |
 | Deployment type | Left default |
-| Set initial password | Left root password as set during install |
+| Set initial password | Left root credential as configured during install |
 | Finish | Clicked **Apply** |
 
 ![OPNsense setup wizard Finish tab before applying](../../screenshots/phase-2-opnsense/opnsense_wizard_finish.png)
@@ -383,13 +381,6 @@ Also verified Proxmox host connectivity to the Xfinity Gateway was unaffected th
 ![Proxmox shell showing ethtool nic1 Link detected no](../../screenshots/phase-2-opnsense/nic_link_troubleshooting.png)
 *Proxmox shell: ethtool confirming `Link detected: no` on nic1 while the WAN cable was in the wrong port*
 
----
-
-**Problem:** OPNsense interfaces assigned in wrong order on first install
-
-**Cause:** Interface assignment was performed too quickly without confirming which vtnet device mapped to which bridge, resulting in LAN and WAN being swapped.
-
-**Resolution:** Reinstalled OPNsense and carefully assigned interfaces one at a time, confirming the bridge assignments matched the intended design before proceeding.
 
 ---
 
@@ -420,8 +411,6 @@ Also verified Proxmox host connectivity to the Xfinity Gateway was unaffected th
 
 ![OPNsense shell showing DHCPDISCOVER looping with no response](../../screenshots/phase-2-opnsense/dhcp_discover_failing.png)
 *OPNsense shell: DHCPDISCOVER looping on vtnet0 with no response, confirming no physical link on WAN*
-
-> Security note before publishing: redact or crop any public IPv6 prefix shown in this screenshot.
 
 ---
 

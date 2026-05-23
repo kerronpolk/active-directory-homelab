@@ -69,7 +69,7 @@ The unit was received with:
 
 ---
 
-## Planned Network Design
+## Network Design
 
 Before any hardware work began, the target network design was mapped out to confirm the hardware requirements. The planned design required a dedicated path for Proxmox management, a separate WAN uplink for OPNsense, and internal-only lab networks for server and workstation traffic.
 
@@ -99,10 +99,10 @@ The CPU socket was inspected and found to have old dried thermal paste residue a
 Both RAM sticks were removed and inspected to verify the part numbers and specifications before reinstalling.
 
 ![Samsung 8GB DDR4 RAM stick](../../screenshots/phase-0-pre-build/ram_samsung.jpeg)
-*Samsung 8GB 1Rx8 PC4-2666V-UA2-11, second RAM stick installed*
+*Samsung 8GB 1Rx8 PC4-2666V-UA2-11 DDR4 module, one of two sticks making up the 16GB total*
 
 ![SKhynix 8GB DDR4 RAM stick](../../screenshots/phase-0-pre-build/ram_skhynix.jpeg)
-*SKhynix 8GB 1Rx8 PC4-2666V-UA2-11, one of two RAM sticks installed*
+*SK Hynix 8GB 1Rx8 PC4-2666V-UA2-11 DDR4 module, the second of two sticks making up the 16GB total*
 
 Both sticks are DDR4-2666 running in dual channel configuration for a total of 16GB.
 
@@ -151,7 +151,7 @@ All lab VMs connect to internal virtual bridges inside Proxmox and route through
 The Intel 82576 chipset was chosen because it has mature, reliable driver support in Linux and Proxmox VE environments.
 
 ![Intel 82576 PCIe NIC](../../screenshots/phase-0-pre-build/nic_card.jpeg)
-*Intel 82576 dual-port 1G PCIe X1 NIC installed to provide dedicated WAN and spare network interfaces*
+*Intel 82576 dual-port 1G PCIe X1 NIC before installation, providing dedicated WAN and spare network interfaces*
 
 ![PCIe NIC installed in OptiPlex](../../screenshots/phase-0-pre-build/pcie_slot_nic_installed.jpeg)
 *Intel 82576 NIC installed in the PCIe X1 slot*
@@ -163,12 +163,12 @@ After installation, the rear I/O panel shows all three RJ45 ports: the onboard R
 
 ---
 
-## Boot Verification
+## Validation
 
 With all hardware installed and verified, the machine was booted from the Proxmox VE USB installer to confirm the hardware was recognized and ready for installation.
 
 ![Proxmox VE installer boot screen](../../screenshots/phase-0-pre-build/proxmox_boot_screen.jpeg)
-*Proxmox VE 9.1 installer boot menu confirming successful boot from USB installation media*
+*Proxmox VE 9.1.1 installer boot menu confirming successful boot from USB installation media*
 
 ---
 

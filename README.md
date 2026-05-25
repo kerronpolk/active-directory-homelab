@@ -2,7 +2,7 @@
 
 > A SOHO Active Directory homelab built on Proxmox VE with OPNsense, Windows Server, and Windows 11. Designed to demonstrate practical IT support, systems administration, networking, and virtualization skills in a realistic small business environment.
 
-**Status: In Progress**
+**Status: In Progress — Phases 0–5 Complete**
 
 ---
 
@@ -36,7 +36,7 @@ The goal is to replicate the kind of environment a junior IT support technician,
 | Proxmox VE 9.1 | Hypervisor |
 | OPNsense | Virtual firewall and router |
 | Windows Server 2025 | Domain controller, DNS, DHCP |
-| Windows 11 Pro | Domain-joined workstation |
+| Windows 11 Enterprise | Domain-joined workstation |
 | Dell OptiPlex 3080 | Physical host hardware |
 | Intel 82576 dual-port NIC | Network segmentation |
 
@@ -64,8 +64,8 @@ The lab uses OPNsense as a virtual firewall to separate the home network from th
 | [Phase 1 — Proxmox VE Installation and Network Configuration](labs/phase-1-proxmox/) | Proxmox installation, bridge configuration, and validation | ✅ Complete |
 | [Phase 2 — OPNsense VM Installation and Configuration](labs/phase-2-opnsense/) | Virtual firewall setup, VLAN configuration, and routing | ✅ Complete |
 | [Phase 3 — Windows Server and Active Directory](labs/phase-3-windows-server/) | Domain controller promotion, DNS, DHCP, and AD DS | ✅ Complete |
-| Phase 4 — Windows 11 Client and Domain Join | Workstation configuration and domain join | ⏳ Planned |
-| Phase 5 — Group Policy and Validation | GPO creation, DHCP relay, and full lab validation | ⏳ Planned |
+| [Phase 4 — Windows 11 Client and Domain Join](labs/phase-4-windows-11/) | Workstation configuration, domain join, and domain user login validation | ✅ Complete |
+| [Phase 5 — Group Policy](labs/phase-5-group-policy/) | OU structure, GPO deployment, file share, and client policy validation | ✅ Complete |
 
 ---
 
@@ -75,7 +75,7 @@ The lab uses OPNsense as a virtual firewall to separate the home network from th
 |---|---|
 | Host | Dell OptiPlex 3080 SFF |
 | CPU | Intel Core i5-10500 3.10GHz |
-| RAM | 16GB DDR4 (Samsung 8GB + SKhynix 8GB) |
+| RAM | 16GB DDR4 (Samsung 8GB + SK Hynix 8GB) |
 | Storage | Western Digital PC SN520 NVMe 256GB |
 | Onboard NIC | Realtek RTL8111 1G |
 | PCIe NIC | Intel 82576 dual-port 1G PCIe X1 |

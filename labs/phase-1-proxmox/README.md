@@ -15,7 +15,7 @@ Install Proxmox VE on the Dell OptiPlex 3080 and configure the virtual network b
 |---|---|
 | Host | Dell OptiPlex 3080 SFF |
 | CPU | Intel Core i5-10500 3.10GHz |
-| RAM | 16GB DDR4 (Samsung 8GB + SKhynix 8GB) |
+| RAM | 16GB DDR4 (Samsung 8GB + SK Hynix 8GB) |
 | Storage | Western Digital PC SN520 NVMe 256GB |
 | Onboard NIC | Realtek RTL8111 (nic0) |
 | PCIe NIC | Intel 82576 Gigabit dual-port PCIe X1 (nic1, nic2) |

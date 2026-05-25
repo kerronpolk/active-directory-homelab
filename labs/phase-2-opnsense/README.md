@@ -381,7 +381,6 @@ Also verified Proxmox host connectivity to the Xfinity Gateway was unaffected th
 ![Proxmox shell showing ethtool nic1 Link detected no](../../screenshots/phase-2-opnsense/nic_link_troubleshooting.png)
 *Proxmox shell: ethtool confirming `Link detected: no` on nic1 while the WAN cable was in the wrong port*
 
-
 ---
 
 **Problem:** OPNsense web UI not accessible from host PC

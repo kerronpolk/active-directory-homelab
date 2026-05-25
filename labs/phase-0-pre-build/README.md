@@ -16,7 +16,7 @@ Source, inspect, and prepare the physical hardware that will serve as the Proxmo
 | Host | Dell OptiPlex 3080 SFF |
 | Source | PCs for People (refurbished) |
 | CPU | Intel Core i5-10500 SRH3A 3.10GHz |
-| RAM | Samsung 8GB 1Rx8 PC4-2666V, SKhynix 8GB 1Rx8 PC4-2666V (16GB total) |
+| RAM | Samsung 8GB 1Rx8 PC4-2666V, SK Hynix 8GB 1Rx8 PC4-2666V (16GB total) |
 | Storage | Western Digital PC SN520 NVMe 256GB |
 | Onboard NIC | Realtek RTL8111 1G |
 | Added PCIe NIC | Intel 82576 Gigabit dual-port PCIe X1 |
@@ -40,9 +40,9 @@ The Dell OptiPlex 3080 SFF was chosen as the Proxmox host because it is a cost-e
 
 Key reasons for using this system:
 
-- **Cost effective:** sourced as a refurbished unit from PCs for People, a nonprofit that refurbishes donated computers
-- **Enterprise grade:** the OptiPlex line is Dell's commercial desktop platform, built for reliability and long-term business use
-- **10th generation Intel CPU:** the i5-10500 supports Intel VT-x and VT-d, which are important for virtualization
+- **Cost-effective:** sourced as a refurbished unit from PCs for People, a nonprofit that refurbishes donated computers
+- **Enterprise-grade:** the OptiPlex line is Dell's commercial desktop platform, built for reliability and long-term business use
+- **10th-generation Intel CPU:** the i5-10500 supports Intel VT-x and VT-d, which are important for virtualization
 - **PCIe expansion slot:** the SFF form factor includes a PCIe X1 slot, allowing an additional dual-port NIC to be installed for network segmentation
 
 Using refurbished hardware also made the setup more realistic. Many small businesses reuse older business-class systems or purchase refurbished equipment instead of buying new hardware for every need. Before installing Proxmox, I inspected the system, reviewed the internal components, and confirmed that the machine was suitable for virtualization. This connects directly to desktop support and IT asset management work.
@@ -59,7 +59,7 @@ The OptiPlex 3080 was sourced from **PCs for People**, a nonprofit organization 
 The unit was received with:
 
 - Intel Core i5-10500 CPU installed
-- 16GB DDR4 RAM installed (Samsung 8GB + SKhynix 8GB)
+- 16GB DDR4 RAM installed (Samsung 8GB + SK Hynix 8GB)
 - Western Digital PC SN520 NVMe 256GB installed
 - Windows 11 Pro pre-installed (wiped during Proxmox installation)
 - No PCIe expansion card installed
@@ -101,7 +101,7 @@ Both RAM sticks were removed and inspected to verify the part numbers and specif
 ![Samsung 8GB DDR4 RAM stick](../../screenshots/phase-0-pre-build/ram_samsung.jpeg)
 *Samsung 8GB 1Rx8 PC4-2666V-UA2-11 DDR4 module, one of two sticks making up the 16GB total*
 
-![SKhynix 8GB DDR4 RAM stick](../../screenshots/phase-0-pre-build/ram_skhynix.jpeg)
+![SK Hynix 8GB DDR4 RAM stick](../../screenshots/phase-0-pre-build/ram_skhynix.jpeg)
 *SK Hynix 8GB 1Rx8 PC4-2666V-UA2-11 DDR4 module, the second of two sticks making up the 16GB total*
 
 Both sticks are DDR4-2666 running in dual channel configuration for a total of 16GB.
@@ -177,7 +177,7 @@ With all hardware installed and verified, the machine was booted from the Proxmo
 | Component | Details | Status |
 |---|---|---|
 | CPU | Intel Core i5-10500 3.10GHz | Cleaned and reseated |
-| RAM | 16GB DDR4 (Samsung 8GB + SKhynix 8GB) | Verified and reinstalled |
+| RAM | 16GB DDR4 (Samsung 8GB + SK Hynix 8GB) | Verified and reinstalled |
 | Storage | WD PC SN520 NVMe 256GB | Verified installed |
 | Onboard NIC | Realtek RTL8111 1G | Verified present |
 | PCIe NIC | Intel 82576 dual-port 1G PCIe X1 | Installed |

@@ -2,8 +2,8 @@
 | VM Name | Role | VLAN | IP Address | OS | Notes |
 |---|---|---|---|---|---|
 | PT-OPNSENSE-01 | Firewall/Router | WAN + LAN/VLANs | WAN: DHCP  LAN: 172.16.x.1 | OPNsense | Routes lab networks |
-| PT-DC-01 | Domain Controller | VLAN 10 | 172.16.10.10 | Windows Server 2022 | AD DS, DNS, DHCP |
-| PT-WIN11-01 | Workstation | VLAN 20 | DHCP | Windows 11 Pro | Domain-joined client |
+| PT-DC-01 | Domain Controller | VLAN 10 | 172.16.10.10 | Windows Server 2025 Standard Evaluation | AD DS, DNS |
+| PT-PC-01 | Workstation | VLAN 20 | DHCP / 172.16.20.188 | Windows 11 Enterprise Evaluation | Domain-joined client |
 
 # Naming Conventions
 
@@ -16,19 +16,19 @@ corp.polktech.local
 - PT-OPNSENSE-01
 
 ## Workstation Names
-- PT-WIN11-01
-- PT-WIN11-02
+- PT-PC-01
+- PT-PC-02
 
 ## User Naming
 Format:
-first.last
+firstinitial.lastname
 
 Example:
-jane.smith
+k.polk
 
 ## Admin Accounts
 Format:
-adm-first.last
+adm-firstinitial.lastname
 
 Example:
-adm-kerron.polk
+adm-k.polk

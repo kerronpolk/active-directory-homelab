@@ -33,10 +33,12 @@ This lab uses three types of bridges:
 Attached to the onboard Realtek RTL8111 NIC (nic0). Proxmox itself uses this bridge for web UI access and management. It sits on the home LAN (10.0.0.0/24) and has a static IP of 10.0.0.2.
 
 **WAN bridge (vmbr1)**
-Attached to Intel 82576 port A (nic1). This bridge has no IP address assigned on the Proxmox side. It exists solely to give the OPNsense VM a path to the home LAN for its WAN interface. OPNsense WAN will receive a DHCP address from the Xfinity Gateway through this bridge.
+Attached to Intel 82576 ACT/LNK B (nic1). This bridge has no IP address assigned on the Proxmox side. It exists solely to give the OPNsense VM a path to the home LAN for its WAN interface. OPNsense WAN will receive a DHCP address from the Xfinity Gateway through this bridge.
+
+> Physical port note: Proxmox assigns nic1 to the port physically labeled **ACT/LNK B** (right port on the bracket), not ACT/LNK A as the label order might suggest. The WAN cable must be plugged into ACT/LNK B. This was confirmed during Phase 2 troubleshooting.
 
 **Spare bridge (vmbr2)**
-Attached to Intel 82576 port B (nic2). Reserved for future use. Not assigned to any VM at this time.
+Attached to Intel 82576 ACT/LNK A (nic2). Reserved for future use. Not assigned to any VM at this time.
 
 **Internal lab bridges (vmbr10, vmbr20)**
 No physical NIC attached. These are fully internal to Proxmox. Lab VMs connect to these bridges and all traffic between them is routed through the OPNsense VM. These bridges have no direct path to the home LAN.
@@ -50,10 +52,11 @@ This design ensures that Windows Server and Windows 11 lab VMs are never directl
 | Bridge | Physical NIC | VLAN | Subnet | Proxmox IP | Role |
 |---|---|---|---|---|---|
 | vmbr0 | nic0 (Realtek RTL8111) | None | 10.0.0.0/24 | 10.0.0.2 | Proxmox management |
-| vmbr1 | nic1 (Intel 82576 port A) | None | 10.0.0.0/24 | None | OPNsense WAN uplink |
-| vmbr2 | nic2 (Intel 82576 port B) | None | None | None | Spare |
+| vmbr1 | nic1 (Intel 82576 ACT/LNK B) | None | 10.0.0.0/24 | None | OPNsense WAN uplink |
+| vmbr2 | nic2 (Intel 82576 ACT/LNK A) | None | None | None | Spare |
 | vmbr10 | None (internal) | VLAN 10 | 172.16.10.0/24 | None | Server VLAN |
 | vmbr20 | None (internal) | VLAN 20 | 172.16.20.0/24 | None | Workstation VLAN |
+
 ---
 
 ## VM Network Interface Assignments
@@ -64,7 +67,7 @@ This design ensures that Windows Server and Windows 11 lab VMs are never directl
 | PT-OPNSENSE-01 | vmbr10 | LAN / VLAN 10 gateway (172.16.10.1) |
 | PT-OPNSENSE-01 | vmbr20 | LAN / VLAN 20 gateway (172.16.20.1) |
 | PT-DC-01 | vmbr10 | Server VLAN (172.16.10.10 static) |
-| PT-WIN11-01 | vmbr20 | Workstation VLAN (DHCP) |
+| PT-PC-01 | vmbr20 | Workstation VLAN (DHCP) |
 
 ---
 

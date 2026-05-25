@@ -25,4 +25,4 @@
 | PT-OPNSENSE-01 LAN (VLAN 10 gateway) | 172.16.10.1 | 10 |
 | PT-OPNSENSE-01 LAN (VLAN 20 gateway) | 172.16.20.1 | 20 |
 | PT-DC-01 | 172.16.10.10 | 10 |
-| PT-WIN11-01 | DHCP | 20 |
+| PT-PC-01 | 172.16.20.188 via DHCP | 20 |
